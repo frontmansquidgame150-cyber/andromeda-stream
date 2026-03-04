@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDROMEDA STREAM | PREMIUM</title>
+    <style>
+        :root {
+            --primary: #00f2ff;
+            --accent: #7000ff;
+            --bg: #080808;
+            --card-bg: #121212;
+            --text: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #000, transparent);
+        }
+
+        h1 { color: var(--primary); letter-spacing: 5px; text-shadow: 0 0 15px rgba(0, 242, 255, 0.5); }
+
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+
+        /* 📺 CARDS DE PREÇO */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { 
+            background: var(--card-bg); border: 1px solid #222; padding: 20px; 
+            border-radius: 15px; text-align: center; transition: 0.3s;
+        }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .price { font-size: 1.8rem; color: var(--primary); margin: 15px 0; }
+        .btn { 
+            display: block; background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: #000; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: bold;
+        }
+
+        /* ⭐ DEPOIMENTOS */
+        .testimonials { margin-top: 60px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .t-card { background: #1a1a1a; padding: 15px; border-radius: 10px; font-style: italic; border-left: 3px solid var(--primary); }
+
+        /* ❓ FAQ (DÚVIDAS) */
+        .faq { margin-top: 60px; padding-bottom: 40px; }
+        details { background: #121212; margin-bottom: 10px; padding: 15px; border-radius: 8px; cursor: pointer; border: 1px solid #222; }
+        details[open] { border-color: var(--primary); }
+        summary { font-weight: bold; color: var(--primary); }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ANDROMEDA STREAM</h1>
+    <p>O melhor do entretenimento no seu controle.</p>
+</header>
+
+<div class="container">
+    <div class="grid">
+        <div class="card">
+            <h2>NETFLIX</h2>
+            <div class="price">R$ 18,90</div>
+            <a href="https://wa.me/5598996018599?text=Quero+Netflix" class="btn">ASSINAR AGORA</a>
+        </div>
+        <div class="card">
+            <h2>PRIME VIDEO</h2>
+            <div class="price">R$ 10,00</div>
+            <a href="https://wa.me/5598996018599?text=Quero+Prime" class="btn">ASSINAR AGORA</a>
+        </div>
+    </div>
+
+    <div class="testimonials">
+        <h2 style="text-align: center; color: var(--primary);">⭐ CLIENTES SATISFEITOS</h2>
+        <div class="testimonial-grid">
+            <div class="t-card">"Entrega super rápida, recomendo muito!" - João P.</div>
+            <div class="t-card">"Melhor preço de streaming que já achei." - Maria S.</div>
+            <div class="t-card">"Suporte nota 10, Andromeda é o melhor." - Carlos R.</div>
+        </div>
+    </div>
+
+    <div class="faq">
+        <h2 style="text-align: center; color: var(--primary);">❓ DÚVIDAS FREQUENTES</h2>
+        <details>
+            <summary>Como recebo o acesso?</summary>
+            <p>Após o pagamento, o acesso é enviado imediatamente pelo seu WhatsApp.</p>
+        </details>
+        <details>
+            <summary>Quais as formas de pagamento?</summary>
+            <p>Aceitamos Pix, Cartão de Crédito e Saldo Mercado Pago.</p>
+        </details>
+        <details>
+            <summary>Tem garantia?</summary>
+            <p>Sim! Todas as telas possuem garantia total durante todo o período da assinatura.</p>
+        </details>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 20px; color: #444;">
+    © 2026 ANDROMEDA STREAM | Desenvolvido por Andromeda.
+</footer>
+
+</body>
+</html>
