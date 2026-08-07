@@ -27,10 +27,11 @@ console.log('🔐 CÓDIGO DE PAREAMENTO: ' + codigo);
 console.log('========================================');
 console.log('📱 Abra WhatsApp → Aparelhos conectados → Conectar aparelho\n');
 
-// Iniciar conexão com WhatsApp
+// Iniciar conexão SEM precisar de navegador
 wppconnect.create({
   session: 'AndromedaConect',
   pairingCode: true,
+  useChrome: false, // ✅ Funciona sem Chrome!
   statusFind: (status) => {
     console.log('📊 Status:', status);
     if (status === 'isLogged') {
@@ -41,7 +42,7 @@ wppconnect.create({
   },
 })
 .then((client) => {
-  console.log('🎉 Cliente pronto!');
+  console.log('🎉 Pronto! Conectado!');
   client.onMessage((mensagem) => {
     if (mensagem.body.toLowerCase() === 'oi') {
       client.sendText(mensagem.from, '👋 Olá! Bem-vindo ao Andromeda Conect!');
@@ -50,12 +51,8 @@ wppconnect.create({
 })
 .catch((erro) => console.error('❌ Erro:', erro));
 
-// API para o painel consultar status
-app.get('/status', (req, res) => {
-  res.json(statusConexao);
-});
+// API para o painel
+app.get('/status', (req, res) => res.json(statusConexao));
 
 const PORTA = process.env.PORT || 3000;
-app.listen(PORTA, () => {
-  console.log(`🚀 Servidor rodando na porta ${PORTA}`);
-});
+app.listen(PORTA, () => console.log(`🚀 Servidor na porta ${PORTA}`));
